@@ -38,5 +38,29 @@ public class ItemRoleKit {
 	@Column(name="status")
 	private byte status;
 	
+	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public LocalDateTime getCreated() {
+		return created;
+	}
+
+	public LocalDateTime getUpdated() {
+		return updated;
+	}
+
+	public byte getStatus() {
+		return status;
+	}
+	
+	
+	
 
 }
