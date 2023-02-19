@@ -22,8 +22,8 @@ public class AccessController {
 	}
 	
 	@GetMapping("/{id}")
-	public List<Access> findAccesses(@PathVariable Integer id){
-		//return this.repository.findProfileAccess(id);
+	public List<Access> getAccesses(@PathVariable Integer id){
+		//return this.repository.getAccessToProfile(id);
 		return null;
 	}
 

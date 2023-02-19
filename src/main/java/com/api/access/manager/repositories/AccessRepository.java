@@ -12,5 +12,4 @@ import com.api.access.manager.domain.model.access.Access;
 public interface AccessRepository extends JpaRepository<Access, Integer>{
 	//@Query(nativeQuery=true, value="")
 	//List<Access> findProfileAccess(@Param("arg1") Long id);
-
 }
