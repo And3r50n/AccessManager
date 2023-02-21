@@ -1,6 +1,9 @@
 package com.api.access.manager.domain.model.department;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
+import org.hibernate.annotations.Fetch;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import jakarta.persistence.Column;
@@ -10,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -28,6 +32,10 @@ public class DepartmentSectionKit {
 	@ManyToOne
 	@JoinColumn(name="section_id")
 	private Section section;
+	
+	@OneToMany(mappedBy="sectionKit")
+	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
+	private List<SectionJobTitleKit> jobTitleKits;
 	
 	@CreatedDate
 	@Column(name="created_at")

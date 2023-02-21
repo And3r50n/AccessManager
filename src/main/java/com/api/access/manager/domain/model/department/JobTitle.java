@@ -1,39 +1,25 @@
-package com.api.access.manager.domain.model.profile;
+package com.api.access.manager.domain.model.department;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import org.hibernate.annotations.Fetch;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-import com.api.access.manager.domain.model.department.Department;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
-
 
 @Entity
-@Table(name="profile")
-public class ResumeProfile {
+@Table(name="job_title")
+public class JobTitle {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="code")
-	@Size(min = 6, max = 8)
-	private String code;
-	
-	@Column(name="description")
-	private String description;
-	
-	@OneToMany(mappedBy="profile")
-	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
-	private List<Department> departments;
+	@Column(name="name")
+	private String name;
 	
 	@CreatedDate
 	@Column(name="created_at")
@@ -48,22 +34,12 @@ public class ResumeProfile {
 
 	
 	
-	
-	
 	public Integer getId() {
 		return id;
 	}
 
-	public String getCode() {
-		return code;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public List<Department> getDepartments() {
-		return departments;
+	public String getName() {
+		return name;
 	}
 
 	public LocalDateTime getCreated() {
@@ -78,6 +54,6 @@ public class ResumeProfile {
 		return enabled;
 	}
 	
-
-
+	
+	
 }

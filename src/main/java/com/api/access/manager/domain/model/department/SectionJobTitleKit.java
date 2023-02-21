@@ -1,7 +1,6 @@
 package com.api.access.manager.domain.model.department;
 
 import java.time.LocalDateTime;
-
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import jakarta.persistence.Column;
@@ -9,19 +8,26 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-
 @Entity
-@Table(name="section")
-public class Section {
+@Table(name="section_job_title_kit")
+public class SectionJobTitleKit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="name")
-	private String name;
+	@ManyToOne
+	@JoinColumn(name="job_title_id")
+	private JobTitle jobTitle;
+	
+	@ManyToOne
+	@JoinColumn(name="section_kit_id")
+	private DepartmentSectionKit sectionKit;
+	
 	
 	@CreatedDate
 	@Column(name="created_at")
@@ -31,8 +37,9 @@ public class Section {
 	@Column(name="updated_at")
 	private LocalDateTime updated;
 	
-	@Column(name="enabled")
-	private boolean enabled;
+	@Column(name="status")
+	private byte status;
+
 	
 	
 	
@@ -40,8 +47,8 @@ public class Section {
 		return id;
 	}
 
-	public String getName() {
-		return name;
+	public JobTitle getJobTitle() {
+		return jobTitle;
 	}
 
 	public LocalDateTime getCreated() {
@@ -52,9 +59,10 @@ public class Section {
 		return updated;
 	}
 
-	public boolean isEnabled() {
-		return enabled;
+	public byte getStatus() {
+		return status;
 	}
+	
 	
 
 }
