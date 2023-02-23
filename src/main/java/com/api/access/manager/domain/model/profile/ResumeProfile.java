@@ -13,7 +13,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Size;
 
 
 @Entity
@@ -21,11 +20,10 @@ import jakarta.validation.constraints.Size;
 public class ResumeProfile {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
-	@Column(name="code")
-	@Size(min = 6, max = 8)
+	@Column(name="code", length = 8, nullable = false)
 	private String code;
 	
 	@Column(name="description")

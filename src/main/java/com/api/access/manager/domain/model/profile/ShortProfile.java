@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class ShortProfile {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	@Column(name="code")
