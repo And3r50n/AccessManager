@@ -20,7 +20,7 @@ import jakarta.persistence.Table;
 public class ItemRoleKit {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@ManyToOne

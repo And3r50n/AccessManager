@@ -23,7 +23,7 @@ import jakarta.persistence.Table;
 public class Department {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(name="name")
@@ -58,10 +58,6 @@ public class Department {
 
 	public String getName() {
 		return name;
-	}
-
-	public ResumeProfile getProfile() {
-		return profile;
 	}
 
 	public List<DepartmentSectionKit> getSectionKits() {

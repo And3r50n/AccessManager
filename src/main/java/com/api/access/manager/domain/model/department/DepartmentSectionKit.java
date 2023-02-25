@@ -22,7 +22,7 @@ import jakarta.persistence.Table;
 public class DepartmentSectionKit {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@ManyToOne
@@ -53,10 +53,6 @@ public class DepartmentSectionKit {
 	
 	public Integer getId() {
 		return id;
-	}
-
-	public Department getDepartment() {
-		return department;
 	}
 
 	public Section getSection() {

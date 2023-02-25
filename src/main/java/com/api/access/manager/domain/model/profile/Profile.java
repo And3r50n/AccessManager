@@ -9,10 +9,10 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="profile")
-public class ShortProfile {
+public class Profile {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(name="code")
@@ -22,7 +22,7 @@ public class ShortProfile {
 	private String description;
 	
 	
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 	public String getCode() {

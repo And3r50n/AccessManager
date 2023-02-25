@@ -17,18 +17,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="profile")
-public class ResumeProfile {
+public class ResumeProfile{
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Column(name="code", length = 8, nullable = false)
+	@Column(name="code")
 	private String code;
 	
 	@Column(name="description")
 	private String description;
-	
+
 	@OneToMany(mappedBy="profile")
 	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
 	private List<Department> departments;
@@ -44,9 +44,6 @@ public class ResumeProfile {
 	@Column(name="enabled")
 	private boolean enabled;
 
-	
-	
-	
 	
 	public Integer getId() {
 		return id;
