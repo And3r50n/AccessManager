@@ -2,24 +2,24 @@ package com.api.access.manager.application.dto;
 
 import com.api.access.manager.domain.model.profile.Profile;
 
-public class SummaryProfileDTO {
+public class SummaryProfileDto {
 	
 	private Integer id;
 	private String code;
 	private String description;
 	
 	
-	public SummaryProfileDTO() {
+	public SummaryProfileDto() {
 
 	}
 	
-	public SummaryProfileDTO(Integer id, String code, String description) {
+	public SummaryProfileDto(Integer id, String code, String description) {
 		this.id = id;
 		this.code = code;
 		this.description = description;
 	}
 	
-	public SummaryProfileDTO(Profile profile) {
+	public SummaryProfileDto(Profile profile) {
 		this.id = profile.getId();
 		this.code = profile.getCode();
 		this.description = profile.getDescription();

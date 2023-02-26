@@ -33,7 +33,7 @@ public class Department {
 	
 	@OneToMany(mappedBy="department")
 	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
-	private List<DepartmentSectionKit> sectionKits;
+	private List<SectionsKit> sectionKits;
 	
 	@CreatedDate
 	@Column(name="created_at")
@@ -58,7 +58,7 @@ public class Department {
 		return name;
 	}
 
-	public List<DepartmentSectionKit> getSectionKits() {
+	public List<SectionsKit> getSectionKits() {
 		return sectionKits;
 	}
 

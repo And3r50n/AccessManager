@@ -14,8 +14,8 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="access_item_kit")
-public class AccessItemKit {
+@Table(name="item_kit")
+public class ItemKit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

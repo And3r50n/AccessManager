@@ -18,8 +18,8 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="department_section_kit")
-public class DepartmentSectionKit {
+@Table(name="section_kit")
+public class SectionsKit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +35,7 @@ public class DepartmentSectionKit {
 	
 	@OneToMany(mappedBy="sectionKit")
 	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
-	private List<SectionJobTitleKit> jobTitleKits;
+	private List<JobTitleKit> jobTitleKits;
 	
 	@CreatedDate
 	@Column(name="created_at")
@@ -57,6 +57,10 @@ public class DepartmentSectionKit {
 
 	public Section getSection() {
 		return section;
+	}
+	
+	public List<JobTitleKit> getJobTitleKits() {
+		return jobTitleKits;
 	}
 
 	public LocalDateTime getCreated() {

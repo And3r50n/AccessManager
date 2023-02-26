@@ -16,8 +16,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="item_role_kit")
-public class ItemRoleKit {
+@Table(name="role_kit")
+public class RoleKit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

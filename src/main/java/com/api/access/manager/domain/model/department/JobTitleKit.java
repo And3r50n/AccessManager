@@ -13,8 +13,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="section_job_title_kit")
-public class SectionJobTitleKit {
+@Table(name="job_title_kit")
+public class JobTitleKit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +26,7 @@ public class SectionJobTitleKit {
 	
 	@ManyToOne
 	@JoinColumn(name="section_kit_id")
-	private DepartmentSectionKit sectionKit;
+	private SectionsKit sectionKit;
 	
 	
 	@CreatedDate

@@ -2,34 +2,35 @@ package com.api.access.manager.application.dto;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.api.access.manager.domain.model.department.Department;
 import com.api.access.manager.domain.model.profile.Profile;
 
 
 
-public class ResumeProfileDTO {
+public class ResumeProfileDto {
 	
 	private Integer id;
 	private String code;
 	private String description;
-	private List<Department> departments = new ArrayList<>();
+	private List<ResumeDepartmentDto> departments;
 	
-	public ResumeProfileDTO() {
+	public ResumeProfileDto() {
 
 	}
 	
-	public ResumeProfileDTO(Integer id, String code, String description) {
+	public ResumeProfileDto(Integer id, String code, String description) {
 		this.id = id;
 		this.code = code;
 		this.description = description;
 	}
 	
-	public ResumeProfileDTO(Profile profile) {
+	public ResumeProfileDto(Profile profile) {
 		this.id = profile.getId();
 		this.code = profile.getCode();
 		this.description = profile.getDescription();
-		this.departments = profile.getDepartments();
+		this.departments = new ArrayList<>();
+		profile.getDepartments().stream().forEach(department -> this.departments.add(new ResumeDepartmentDto(department)));	
 	}
+
 
 	public Integer getId() {
 		return id;
@@ -39,19 +40,12 @@ public class ResumeProfileDTO {
 		return code;
 	}
 
-	public void setCode(String code) {
-		this.code = code;
-	}
 
 	public String getDescription() {
 		return description;
 	}
 	
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
-	public List<Department> getDepartments() {
+	public List<ResumeDepartmentDto> getDepartments() {
 		return departments;
 	}
 	

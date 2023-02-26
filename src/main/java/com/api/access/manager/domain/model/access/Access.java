@@ -43,7 +43,7 @@ public class Access {
 	
 	@OneToMany(mappedBy="access")
 	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
-	private List<AccessItemKit> itemKits;
+	private List<ItemKit> itemKits;
 
 	
 	
