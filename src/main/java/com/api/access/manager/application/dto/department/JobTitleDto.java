@@ -1,23 +1,15 @@
-package com.api.access.manager.application.dto;
+package com.api.access.manager.application.dto.department;
 
 
 import com.api.access.manager.domain.model.department.JobTitleKit;
 
-public class ResumeJobTitleDto {
+public class JobTitleDto {
 	
 	private Integer id;
 	private Integer code;
 	private String name;
 	
-	public ResumeJobTitleDto() {
-	}
-	
-	public ResumeJobTitleDto(Integer id, String name) {
-		this.id = id;
-		this.name = name;
-	}
-	
-	public ResumeJobTitleDto(JobTitleKit kit) {
+	public JobTitleDto(JobTitleKit kit) {
 		this.id = kit.getId();
 		this.code = kit.getJobTitle().getId();
 		this.name = kit.getJobTitle().getName();

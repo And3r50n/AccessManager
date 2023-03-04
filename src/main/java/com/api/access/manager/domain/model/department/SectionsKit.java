@@ -6,6 +6,9 @@ import java.util.List;
 import org.hibernate.annotations.Fetch;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+
+import com.api.access.manager.domain.model.profile.Profile;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,8 +29,8 @@ public class SectionsKit {
 	private Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name="department_id")
-	private Department department;
+	@JoinColumn(name="profile_id")
+	private Profile profile;
 	
 	@ManyToOne
 	@JoinColumn(name="section_id")

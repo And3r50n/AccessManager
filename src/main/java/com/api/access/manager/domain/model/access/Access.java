@@ -26,6 +26,17 @@ public class Access {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
+	@Column(name="profile_id")
+	private Integer profileId;
+	
+	@ManyToOne
+	@JoinColumn(name="application_id")
+	private Application application;
+	
+	@OneToMany(mappedBy="access")
+	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
+	private List<ItemKit> kits;
+	
 	@CreatedDate
 	@Column(name="created_at")
 	private LocalDateTime created;
@@ -37,19 +48,14 @@ public class Access {
 	@Column(name="status")
 	private byte status;
 	
-	@ManyToOne
-	@JoinColumn(name="application_id")
-	private Application application;
-	
-	@OneToMany(mappedBy="access")
-	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
-	private List<ItemKit> itemKits;
 
 	
-	
-	
-	public long getId() {
+	public Integer getId() {
 		return id;
+	}
+	
+	public Integer getProfileId() {
+		return profileId;
 	}
 
 	public LocalDateTime getCreated() {
@@ -66,6 +72,10 @@ public class Access {
 
 	public Application getApplication() {
 		return application;
+	}
+	
+	public List<ItemKit> getItems() {
+		return kits;
 	}
 	
 	

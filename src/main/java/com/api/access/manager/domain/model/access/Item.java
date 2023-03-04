@@ -22,6 +22,9 @@ public class Item {
 	@Column(name="name")
 	private String name;
 	
+	@Column(name="application_id")
+	private Integer applicationId;
+	
 	@Column(name="url")
 	private String url;
 	
@@ -44,6 +47,10 @@ public class Item {
 	
 	public Integer getId() {
 		return id;
+	}
+	
+	public Integer getApplicationId() {
+		return applicationId;
 	}
 
 	public String getName() {

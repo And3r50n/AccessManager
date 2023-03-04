@@ -2,13 +2,10 @@ package com.api.access.manager.domain.model.profile;
 
 import java.time.LocalDateTime;
 import java.util.List;
-
 import org.hibernate.annotations.Fetch;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
-
-import com.api.access.manager.domain.model.department.Department;
-
+import com.api.access.manager.domain.model.department.SectionsKit;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,7 +31,7 @@ public class Profile {
 	
 	@OneToMany(mappedBy="profile")
 	@Fetch(org.hibernate.annotations.FetchMode.SUBSELECT)
-	private List<Department> departments;
+	private List<SectionsKit> sections;
 	
 	@CreatedDate
 	@Column(name="created_at")
@@ -61,8 +58,8 @@ public class Profile {
 		return description;
 	}
 
-	public List<Department> getDepartments() {
-		return departments;
+	public List<SectionsKit> getSections() {
+		return sections;
 	}
 
 	public LocalDateTime getCreated() {

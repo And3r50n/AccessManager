@@ -25,6 +25,9 @@ public class Role {
 	@Column(name="name")
 	private String name;
 	
+	@Column(name="item_id")
+	private Integer itemId;
+	
 	@Column(name="attribute")
 	private String attribute;
 	

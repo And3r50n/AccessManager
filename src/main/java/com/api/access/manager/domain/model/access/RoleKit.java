@@ -24,8 +24,12 @@ public class RoleKit {
 	private Integer id;
 	
 	@ManyToOne
-	@JoinColumn(name="role_kit_id")
+	@JoinColumn(name="role_id")
 	private Role role;
+	
+	@ManyToOne
+	@JoinColumn(name="item_kit_id")
+	private ItemKit itemKit;
 	
 	@CreatedDate
 	@Column(name="created_at")
