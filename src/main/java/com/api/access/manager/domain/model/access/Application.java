@@ -40,7 +40,7 @@ public class Application {
 	
 	
 	
-	public long getId() {
+	public Integer getId() {
 		return id;
 	}
 
