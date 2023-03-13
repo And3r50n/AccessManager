@@ -5,9 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.api.access.manager.application.dto.ProfileDto;
 import com.api.access.manager.application.dto.SummaryProfileDto;
-import com.api.access.manager.application.dto.department.ProfileDto;
 import com.api.access.manager.domain.model.profile.Profile;
 import com.api.access.manager.infrastructure.repositories.ProfileRepository;
 

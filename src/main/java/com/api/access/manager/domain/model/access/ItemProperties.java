@@ -1,7 +1,6 @@
-package com.api.access.manager.domain.model.department;
+package com.api.access.manager.domain.model.access;
 
 import java.time.LocalDateTime;
-
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import jakarta.persistence.Column;
@@ -13,8 +12,8 @@ import jakarta.persistence.Table;
 
 
 @Entity
-@Table(name="section")
-public class Section {
+@Table(name="item")
+public class ItemProperties {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,6 +21,15 @@ public class Section {
 	
 	@Column(name="name")
 	private String name;
+	
+	@Column(name="application_id")
+	private Integer applicationId;
+	
+	@Column(name="url")
+	private String url;
+	
+	@Column(name="ip")
+	private String ip;
 	
 	@CreatedDate
 	@Column(name="created_at")
@@ -33,15 +41,26 @@ public class Section {
 	
 	@Column(name="enabled")
 	private boolean enabled;
-	
-	
+
 	
 	public Integer getId() {
 		return id;
 	}
+	
+	public Integer getApplicationId() {
+		return applicationId;
+	}
 
 	public String getName() {
 		return name;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public String getIp() {
+		return ip;
 	}
 
 	public LocalDateTime getCreated() {
@@ -55,6 +74,5 @@ public class Section {
 	public boolean isEnabled() {
 		return enabled;
 	}
-	
 
 }

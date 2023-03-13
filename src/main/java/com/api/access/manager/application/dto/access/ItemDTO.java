@@ -1,15 +1,15 @@
 package com.api.access.manager.application.dto.access;
 
-import com.api.access.manager.domain.model.access.RoleKit;
+import com.api.access.manager.domain.model.access.ItemSet;
 
-public class RoleDto {
+public class ItemDTO {
 	
 	private Integer id;
 	private String name;
-	
-	public RoleDto(RoleKit kit) {
-		this.id = kit.getId();
-		this.name = kit.getRole().getName();	
+
+	public ItemDTO(ItemSet itemSet) {
+		this.id = itemSet.getId();
+		this.name = itemSet.getItem().getName();
 	}
 	
 	public Integer getId() {
@@ -19,6 +19,5 @@ public class RoleDto {
 	public String getName() {
 		return this.name;
 	}
-
-
+	
 }

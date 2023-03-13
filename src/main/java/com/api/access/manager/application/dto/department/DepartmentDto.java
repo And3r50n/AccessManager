@@ -2,9 +2,10 @@ package com.api.access.manager.application.dto.department;
 
 import java.util.ArrayList;
 import java.util.List;
-import com.api.access.manager.domain.model.department.SectionsKit;
+import com.api.access.manager.domain.model.department.DepartmentSet;
 
-public class SectionDto {
+
+public class DepartmentDto {
 	
 	private Integer id;
 	private Integer code;
@@ -13,13 +14,13 @@ public class SectionDto {
 	private byte status;
 	
 
-	public SectionDto(SectionsKit kit) {
+	public DepartmentDto(DepartmentSet kit) {
 		this.id = kit.getId();
-		this.code = kit.getSection().getId();
-		this.name = kit.getSection().getName();
+		this.code = kit.getDepartment().getId();
+		this.name = kit.getDepartment().getName();
 		this.status = kit.getStatus();
 		this.jobTitles =  new ArrayList<>();
-		kit.getJobTitleKits().stream().forEach(jobTitleKit -> this.jobTitles.add(new JobTitleDto(jobTitleKit)));
+		kit.getJobTitleSet().stream().forEach(jobTitleKit -> this.jobTitles.add(new JobTitleDto(jobTitleKit)));
 	}
 
 	

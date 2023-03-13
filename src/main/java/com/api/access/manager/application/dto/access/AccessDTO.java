@@ -5,35 +5,35 @@ import java.util.List;
 import com.api.access.manager.domain.model.access.Access;
 
 
-public class AccessDto {
+public class AccessDTO {
 	
 	private Integer id;
 	private String name;
-	private Integer code; 
-	private List<ItemDto> itens;
+	private Integer applicationId; 
+	private List<ItemDTO> itens;
 
 	
-	public AccessDto(Access access) {
+	public AccessDTO(Access access) {
 		this.itens = new ArrayList<>();
 		this.id = access.getId();
 		this.name = access.getApplication().getName();
-		this.code = access.getApplication().getId();
-		access.getItems().stream().forEach(item -> this.itens.add(new ItemDto(item)));
+		this.applicationId = access.getApplication().getId();
+		access.getItens().stream().forEach(item -> this.itens.add(new ItemDTO(item)));
 	}
 	
 	public Integer getId() {
 		return this.id;
 	}
 	
-	public Integer getCode() {
-		return this.code;
+	public Integer getApplicationId() {
+		return this.applicationId;
 	}
 	
 	public String getName() {
 		return this.name;
 	}
 	
-	public List<ItemDto> getItens(){
+	public List<ItemDTO> getItens(){
 		return this.itens;
 	}
 

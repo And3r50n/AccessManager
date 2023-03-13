@@ -1,6 +1,7 @@
 package com.api.access.manager.domain.model.department;
 
 import java.time.LocalDateTime;
+
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import jakarta.persistence.Column;
@@ -10,9 +11,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
 @Entity
-@Table(name="jobtitle")
-public class JobTitle {
+@Table(name="department")
+public class Department {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +33,7 @@ public class JobTitle {
 	
 	@Column(name="enabled")
 	private boolean enabled;
-
+	
 	
 	
 	public Integer getId() {
@@ -54,6 +56,5 @@ public class JobTitle {
 		return enabled;
 	}
 	
-	
-	
+
 }
