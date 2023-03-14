@@ -11,6 +11,7 @@ public class ItemPropertiesDTO {
 	private Integer id;
 	private String application;
 	private String name;
+	private String environment;
 	private LocalDateTime created;
 	private LocalDateTime updated;
 	private byte status;
@@ -22,6 +23,7 @@ public class ItemPropertiesDTO {
 		this.id = item.getId();
 		this.application = item.getAccess().getApplication().getName();
 		this.name = item.getItem().getName();
+		this.environment = item.getItem().getEnvironment();
 		this.created = item.getCreated();
 		this.updated = item.getUpdated();
 		this.status = item.getStatus();
@@ -38,6 +40,10 @@ public class ItemPropertiesDTO {
 	
 	public String getName() {
 		return name;
+	}
+	
+	public String getEnvironment() {
+		return environment;
 	}
 
 	public LocalDateTime getCreated() {

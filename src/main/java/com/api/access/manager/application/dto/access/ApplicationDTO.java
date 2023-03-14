@@ -6,21 +6,13 @@ public class ApplicationDTO {
 	
 	
 	private String name;
-	private String environment;
-	
-	
+
 	public ApplicationDTO(Application application) {
 		this.name = application.getName();
-		this.environment = application.getEnvironment();
 	}	
 	
 	public String getName() {
 		return name;
 	}
-	public String getEnvironment() {
-		return environment;
-	}
-	
-	
-	
+
 }

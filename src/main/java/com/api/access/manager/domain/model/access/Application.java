@@ -21,9 +21,6 @@ public class Application {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="environment")
-	private String environment;
-
 	@CreatedDate
 	@Column(name="created_at")
 	private LocalDateTime created;
@@ -35,10 +32,7 @@ public class Application {
 	@Column(name="enabled")
 	private boolean enabled;
 
-	
-	
-	
-	
+
 	
 	public Integer getId() {
 		return id;
@@ -46,10 +40,6 @@ public class Application {
 
 	public String getName() {
 		return name;
-	}
-
-	public String getEnvironment() {
-		return environment;
 	}
 
 	public LocalDateTime getCreated() {

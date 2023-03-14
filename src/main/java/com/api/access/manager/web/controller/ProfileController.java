@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.access.manager.application.dto.ProfileDto;
-import com.api.access.manager.application.dto.SummaryProfileDto;
+import com.api.access.manager.application.dto.ProfileDTO;
+import com.api.access.manager.application.dto.SummaryProfileDTO;
 import com.api.access.manager.application.service.ProfileService;
 
 
@@ -21,12 +21,12 @@ public class ProfileController {
 	
 
 	@GetMapping("all")
-	public List<SummaryProfileDto> findAllProfiles(){
+	public List<SummaryProfileDTO> findAllProfiles(){
 		return this.service.findAll();
 	}
 	
 	@GetMapping("{id}")
-	public ProfileDto findProfile(@PathVariable Integer id){
+	public ProfileDTO findProfile(@PathVariable Integer id){
 		return this.service.findById(id);
 	}
 

@@ -9,7 +9,7 @@ import com.api.access.manager.domain.model.profile.Profile;
 
 
 
-public class ProfileDto {
+public class ProfileDTO {
 	
 	private Integer id;
 	private String code;
@@ -17,7 +17,7 @@ public class ProfileDto {
 	private List<DepartmentDTO> departments;
 	private List<AccessDTO> accesses;
 	
-	public ProfileDto(Profile profile) {
+	public ProfileDTO(Profile profile) {
 		this.id = profile.getId();
 		this.code = profile.getCode();
 		this.description = profile.getDescription();

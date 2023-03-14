@@ -19,6 +19,9 @@ public class Item {
 	@Column(name="name")
 	private String name;
 	
+	@Column(name="environment")
+	private String environment;
+	
 	@Column(name="application_id")
 	private Integer applicationId;
 	
@@ -32,6 +35,10 @@ public class Item {
 	
 	public Integer getApplicationId() {
 		return applicationId;
+	}
+	
+	public String getEnvironment() {
+		return environment;
 	}
 
 	public String getName() {

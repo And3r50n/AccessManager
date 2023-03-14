@@ -25,6 +25,9 @@ public class ItemProperties {
 	@Column(name="application_id")
 	private Integer applicationId;
 	
+	@Column(name="environment")
+	private String environment;
+	
 	@Column(name="url")
 	private String url;
 	
@@ -54,9 +57,13 @@ public class ItemProperties {
 	public String getName() {
 		return name;
 	}
-
+	
 	public String getUrl() {
 		return url;
+	}
+
+	public String getEnvironment() {
+		return environment;
 	}
 
 	public String getIp() {

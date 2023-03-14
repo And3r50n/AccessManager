@@ -21,7 +21,7 @@ public class ItemController {
 	@Autowired
 	private ItemService service;
 	
-	@GetMapping("")
+	@GetMapping()
 	public List<ItemDTO> getItens(@RequestParam List<Integer> excepts, Integer id){
 		return this.service.getItens(excepts, id);
 	}

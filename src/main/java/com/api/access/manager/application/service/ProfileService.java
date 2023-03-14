@@ -5,8 +5,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.api.access.manager.application.dto.ProfileDto;
-import com.api.access.manager.application.dto.SummaryProfileDto;
+import com.api.access.manager.application.dto.ProfileDTO;
+import com.api.access.manager.application.dto.SummaryProfileDTO;
 import com.api.access.manager.domain.model.profile.Profile;
 import com.api.access.manager.infrastructure.repositories.ProfileRepository;
 
@@ -17,17 +17,17 @@ public class ProfileService {
 	@Autowired
 	private ProfileRepository repository;
 	
-	public List<SummaryProfileDto> findAll() {
+	public List<SummaryProfileDTO> findAll() {
 	    List<Profile> profiles = this.repository.findAll(); 
 	    return profiles.stream()
-	            .map(SummaryProfileDto::new)
+	            .map(SummaryProfileDTO::new)
 	            .collect(Collectors.toList());
 	}
 	
 	
-	public ProfileDto findById(Integer id) {
+	public ProfileDTO findById(Integer id) {
 		Profile profile = this.repository.findById(id).get();
-		return new ProfileDto(profile);
+		return new ProfileDTO(profile);
 	}
 
 }
