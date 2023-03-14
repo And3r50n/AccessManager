@@ -5,22 +5,22 @@ import java.util.List;
 import com.api.access.manager.domain.model.department.DepartmentSet;
 
 
-public class DepartmentDto {
+public class DepartmentDTO {
 	
 	private Integer id;
 	private Integer code;
 	private String name;
-	private List<JobTitleDto> jobTitles;
+	private List<JobTitleDTO> jobTitles;
 	private byte status;
 	
 
-	public DepartmentDto(DepartmentSet kit) {
+	public DepartmentDTO(DepartmentSet kit) {
 		this.id = kit.getId();
 		this.code = kit.getDepartment().getId();
 		this.name = kit.getDepartment().getName();
 		this.status = kit.getStatus();
 		this.jobTitles =  new ArrayList<>();
-		kit.getJobTitleSet().stream().forEach(jobTitleKit -> this.jobTitles.add(new JobTitleDto(jobTitleKit)));
+		kit.getJobTitleSet().stream().forEach(jobTitleKit -> this.jobTitles.add(new JobTitleDTO(jobTitleKit)));
 	}
 
 	
@@ -37,7 +37,7 @@ public class DepartmentDto {
 		return name;
 	}
 
-	public List<JobTitleDto> getJobTitles() {
+	public List<JobTitleDTO> getJobTitles() {
 		return jobTitles;
 	}
 

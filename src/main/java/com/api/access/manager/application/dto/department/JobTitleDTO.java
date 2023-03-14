@@ -3,13 +3,13 @@ package com.api.access.manager.application.dto.department;
 
 import com.api.access.manager.domain.model.department.JobTitleSet;
 
-public class JobTitleDto {
+public class JobTitleDTO {
 	
 	private Integer id;
 	private Integer code;
 	private String name;
 	
-	public JobTitleDto(JobTitleSet kit) {
+	public JobTitleDTO(JobTitleSet kit) {
 		this.id = kit.getId();
 		this.code = kit.getJobTitle().getId();
 		this.name = kit.getJobTitle().getName();

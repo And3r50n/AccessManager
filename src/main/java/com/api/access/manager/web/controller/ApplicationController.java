@@ -11,16 +11,15 @@ import com.api.access.manager.application.service.ApplicationService;
 
 
 @RestController
-@RequestMapping("/api/application/")
+@RequestMapping("/api/manager/profile/application/")
 public class ApplicationController {
 	
 	@Autowired
 	private ApplicationService service;
 	
-	
-	@GetMapping("all")
-	public List<ApplicationDTO> findAll(@RequestParam List<Integer> excepts){
-		return this.service.findAll(excepts);
+	@GetMapping()
+	public List<ApplicationDTO> getApplications(@RequestParam List<Integer> excepts){
+		return this.service.getApplications(excepts);
 	}
 
 }

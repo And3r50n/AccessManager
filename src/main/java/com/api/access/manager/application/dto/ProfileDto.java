@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.api.access.manager.application.dto.access.AccessDTO;
-import com.api.access.manager.application.dto.department.DepartmentDto;
+import com.api.access.manager.application.dto.department.DepartmentDTO;
 import com.api.access.manager.domain.model.profile.Profile;
 
 
@@ -14,7 +14,7 @@ public class ProfileDto {
 	private Integer id;
 	private String code;
 	private String description;
-	private List<DepartmentDto> departments;
+	private List<DepartmentDTO> departments;
 	private List<AccessDTO> accesses;
 	
 	public ProfileDto(Profile profile) {
@@ -24,7 +24,7 @@ public class ProfileDto {
 		this.departments = new ArrayList<>();
 		this.accesses = new ArrayList<>();
 		profile.getAccesses().stream().forEach(access -> this.accesses.add(new AccessDTO(access)));	
-		profile.getDepartmentSet().stream().forEach(department -> this.departments.add(new DepartmentDto(department)));	
+		profile.getDepartmentSet().stream().forEach(department -> this.departments.add(new DepartmentDTO(department)));	
 	}
 
 
@@ -40,7 +40,7 @@ public class ProfileDto {
 		return description;
 	}
 
-	public List<DepartmentDto> getDepartments() {
+	public List<DepartmentDTO> getDepartments() {
 		return departments;
 	}
 
